@@ -216,7 +216,7 @@ const StatsSection = () => {
         <div className="flex-shrink-0 lg:w-[400px] flex items-center justify-center animate-fade-in-up" style={{ animationDelay: '900ms' }}>
           <div className="relative group">
             {/* Conteneur de l'image avec effets améliorés */}
-            <div className="relative bg-white p-3 rounded-2xl shadow-2xl transform transition-all duration-700 hover:scale-105 hover:rotate-1 hover:shadow-3xl z-10 group-hover:rotate-2">
+            <div className="relative bg-white p-3 rounded-2xl shadow-2xl transform transition-all duration-700 hover:shadow-3xl z-10">
               <div className="absolute inset-0 bg-gradient-to-br from-red-50/50 to-red-100/50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
               <img 
                 src="/Prof.png" 
@@ -233,14 +233,13 @@ const StatsSection = () => {
               
               {/* Effet de brillance exceptionnel au survol */}
               <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 rounded-xl transform -skew-x-12"></div>
-              <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-red-200/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-1000 rounded-xl transform skew-x-12"></div>
             </div>
             
             {/* Icônes Adobe avec animations exceptionnelles */}
             {[
               { icon: '/photoshop.png', position: 'top-0 left-1/2 -translate-x-1/2 -translate-y-16', delay: '1000ms' },
               { icon: '/adobe-illustrator.png', position: 'top-1/4 right-0 translate-x-16 -translate-y-1/2', delay: '1100ms' },
-              { icon: '/xd.png', position: 'bottom-0 right-1/4 translate-x-16 translate-y-16', delay: '1200ms' },
+              { icon: '/xd.png', position: 'bottom-0 right-1/4 translate-x-8 translate-y-16', delay: '1200ms' },
               { icon: '/indesign.png', position: 'top-1/4 left-0 -translate-x-16 -translate-y-1/2', delay: '1300ms' },
             ].map((tool, index) => (
               <div
@@ -254,7 +253,7 @@ const StatsSection = () => {
                 <img 
                   src={tool.icon} 
                   alt={`Adobe ${tool.icon.split('/')[1].split('.')[0]}`} 
-                  className="w-8 h-8 object-contain"
+                  className="w-8 h-8 object-contain animate-spin-slow"
                   onError={(e) => {
                     console.error(`Failed to load icon: ${tool.icon}`, e);
                   }}

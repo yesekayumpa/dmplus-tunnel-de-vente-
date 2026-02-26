@@ -245,10 +245,10 @@ const CoursesSection = () => {
                       </div>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 bg-white">
+      <div className="max-w-5xl mx-auto px-3 sm:px-4 lg:px-6 bg-white">
         {/* Section IA Career Banner */}
         <section className="py-3 mb-3">
-          <div className="max-w-6xl mx-auto px-3 sm:px-4 lg:px-6">
+          <div className="max-w-5xl mx-auto px-3 sm:px-4 lg:px-6">
             <div className="rounded-3xl overflow-hidden">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 md:gap-6 lg:gap-8 items-center">
                 {/* Contenu texte */}
