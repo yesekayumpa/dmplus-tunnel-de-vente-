@@ -4,9 +4,16 @@ import { Play, X, Clock, User, Star, ArrowRight, PlayCircle, ChevronDown, Lock, 
 const MasterclassSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  
+  // États pour le formulaire de contact
+  const [contactName, setContactName] = useState('');
+  const [contactEmail, setContactEmail] = useState('');
+  const [contactPhone, setContactPhone] = useState('');
+  const [contactMessage, setContactMessage] = useState('');
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
@@ -17,6 +24,14 @@ const MasterclassSection = () => {
     setPassword('');
     setShowPassword(false);
   };
+  const openContactModal = () => setIsContactModalOpen(true);
+  const closeContactModal = () => {
+    setIsContactModalOpen(false);
+    setContactName('');
+    setContactEmail('');
+    setContactPhone('');
+    setContactMessage('');
+  };
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,6 +40,14 @@ const MasterclassSection = () => {
     // Simuler une connexion r&eacute;ussie
     alert('Connexion r&eacute;ussie ! Vous avez maintenant acc&egrave;s &agrave; tous les modules Premium.');
     closeLoginModal();
+  };
+
+  const handleContactSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Logique d'envoi du formulaire ici
+    console.log('Formulaire de contact:', { contactName, contactEmail, contactPhone, contactMessage });
+    alert('Merci pour votre int&eacute;r&ecirc;t ! Nous vous contacterons dans les plus brefs d&eacute;lais.');
+    closeContactModal();
   };
 
   const FormationModules = () => {
@@ -447,7 +470,10 @@ const MasterclassSection = () => {
                       <span className="text-xs font-medium text-gray-700">Suivi régulier du formateur</span>
                     </li>
                   </ul>
-                  <button className="w-full py-2.5 px-3 bg-gradient-to-r from-black to-gray-800 text-white font-semibold rounded-full transition-all duration-500 text-xs hover:from-gray-800 hover:to-black transform hover:scale-[1.02] border border-gray-200">
+                  <button 
+                    onClick={openContactModal}
+                    className="w-full py-2.5 px-3 bg-gradient-to-r from-black to-gray-800 text-white font-semibold rounded-full transition-all duration-500 text-xs hover:from-gray-800 hover:to-black transform hover:scale-[1.02] border border-gray-200"
+                  >
                     Accéder au cours
                   </button>
                 </div>
@@ -459,6 +485,168 @@ const MasterclassSection = () => {
         
         
       </div>
+
+      {/* Modal de connexion Premium */}
+      {isContactModalOpen && (
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-2 sm:p-4 animate-fadeIn" onClick={closeContactModal}>
+          <div className="relative w-full max-w-72 sm:max-w-xs transform transition-all duration-300 scale-100" onClick={e => e.stopPropagation()}>
+            {/* Bouton fermer visible */}
+            <button 
+              onClick={closeContactModal}
+              className="absolute -top-2 -right-2 bg-white text-gray-600 hover:text-red-600 hover:bg-red-50 rounded-full p-1 sm:p-1.5 shadow-lg transition-all duration-300 hover:scale-110 z-10"
+              aria-label="Fermer la connexion"
+            >
+              <X className="w-3 h-3 sm:w-4 sm:h-4" />
+            </button>
+            
+            <div className="bg-white rounded-lg sm:rounded-xl shadow-2xl overflow-hidden border border-gray-100">
+              {/* En-tête du modal compact */}
+              <div className="relative bg-gradient-to-r from-red-500 via-red-600 to-red-700 p-3 sm:p-4 text-white">
+                {/* Effet de brillance */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-50"></div>
+                <div className="relative z-10 text-center">
+                  <div className="inline-flex items-center gap-1 bg-white/20 backdrop-blur-sm rounded-full px-2 py-0.5 sm:px-3 sm:py-1 mb-1.5 sm:mb-2">
+                    <Lock className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
+                    <span className="font-semibold text-xs">INSCRIPTION PREMIUM</span>
+                  </div>
+                  <h2 className="text-base sm:text-lg font-bold mb-0.5 sm:mb-1">Accès formation</h2>
+                  <p className="text-red-100 text-xs">Accompagnement personnalisé</p>
+                </div>
+              </div>
+              
+              {/* Formulaire d'inscription */}
+              <form onSubmit={handleContactSubmit} className="p-3 sm:p-4 space-y-1.5 sm:space-y-2">
+                <div>
+                  <label htmlFor="contactName" className="block text-xs font-semibold text-gray-700 mb-0.5">
+                    Nom complet
+                  </label>
+                  <div className="relative">
+                    <div className="absolute inset-y-0 left-0 pl-2 flex items-center pointer-events-none">
+                      <User className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-gray-400" />
+                    </div>
+                    <input
+                      type="text"
+                      id="contactName"
+                      value={contactName}
+                      onChange={(e) => setContactName(e.target.value)}
+                      className="block w-full pl-6 sm:pl-7 pr-2 py-1 sm:py-1.5 border border-gray-200 rounded-md focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-200 text-xs text-gray-900 placeholder-gray-400 hover:border-gray-300"
+                      placeholder="Votre nom"
+                      required
+                    />
+                  </div>
+                </div>
+                
+                <div>
+                  <label htmlFor="contactEmail" className="block text-xs font-semibold text-gray-700 mb-0.5">
+                    Adresse mail
+                  </label>
+                  <div className="relative">
+                    <div className="absolute inset-y-0 left-0 pl-2 flex items-center pointer-events-none">
+                      <Mail className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-gray-400" />
+                    </div>
+                    <input
+                      type="email"
+                      id="contactEmail"
+                      value={contactEmail}
+                      onChange={(e) => setContactEmail(e.target.value)}
+                      className="block w-full pl-6 sm:pl-7 pr-2 py-1 sm:py-1.5 border border-gray-200 rounded-md focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-200 text-xs text-gray-900 placeholder-gray-400 hover:border-gray-300"
+                      placeholder="votre@email.com"
+                      required
+                    />
+                  </div>
+                </div>
+                
+                <div>
+                  <label htmlFor="contactPassword" className="block text-xs font-semibold text-gray-700 mb-0.5">
+                    Mot de passe
+                  </label>
+                  <div className="relative">
+                    <div className="absolute inset-y-0 left-0 pl-2 flex items-center pointer-events-none">
+                      <Lock className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-gray-400" />
+                    </div>
+                    <input
+                      type="password"
+                      id="contactPassword"
+                      value={contactPhone}
+                      onChange={(e) => setContactPhone(e.target.value)}
+                      className="block w-full pl-6 sm:pl-7 pr-8 py-1 sm:py-1.5 border border-gray-200 rounded-md focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-200 text-xs text-gray-900 placeholder-gray-400 hover:border-gray-300"
+                      placeholder="•••••••"
+                      required
+                    />
+                    <button
+                      type="button"
+                      className="absolute inset-y-0 right-0 pr-2 flex items-center text-gray-400 hover:text-gray-600"
+                    >
+                      <Eye className="h-2.5 w-2.5 sm:h-3 sm:w-3" />
+                    </button>
+                  </div>
+                </div>
+
+                <div>
+                  <label htmlFor="confirmPassword" className="block text-xs font-semibold text-gray-700 mb-0.5">
+                    Confirmer mot de passe
+                  </label>
+                  <div className="relative">
+                    <div className="absolute inset-y-0 left-0 pl-2 flex items-center pointer-events-none">
+                      <Lock className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-gray-400" />
+                    </div>
+                    <input
+                      type="password"
+                      id="confirmPassword"
+                      value={contactMessage}
+                      onChange={(e) => setContactMessage(e.target.value)}
+                      className="block w-full pl-6 sm:pl-7 pr-8 py-1 sm:py-1.5 border border-gray-200 rounded-md focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-200 text-xs text-gray-900 placeholder-gray-400 hover:border-gray-300"
+                      placeholder="•••••••"
+                      required
+                    />
+                    <button
+                      type="button"
+                      className="absolute inset-y-0 right-0 pr-2 flex items-center text-gray-400 hover:text-gray-600"
+                    >
+                      <Eye className="h-2.5 w-2.5 sm:h-3 sm:w-3" />
+                    </button>
+                  </div>
+                </div>
+                
+                <div className="flex items-center justify-between py-1">
+                  <label className="flex items-center">
+                    <input type="checkbox" className="h-3 w-3 text-red-600 focus:ring-red-500 border-gray-300 rounded" />
+                    <span className="ml-1.5 text-xs text-gray-600">Se souvenir</span>
+                  </label>
+                  <a href="#" className="text-xs text-red-600 hover:text-red-500 font-medium">
+                    Mot de passe ?
+                  </a>
+                </div>
+                
+                <div className="flex gap-1.5 sm:gap-2 pt-1">
+                  <button
+                    type="button"
+                    onClick={closeContactModal}
+                    className="flex-1 bg-gray-100 text-gray-600 py-1 px-2 sm:py-1.5 sm:px-3 rounded-full font-medium hover:bg-gray-200 focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition-all duration-200 text-xs"
+                  >
+                    Annuler
+                  </button>
+                  <button
+                    type="submit"
+                    className="flex-1 bg-gradient-to-r from-red-500 to-red-600 text-white py-1 px-2 sm:py-1.5 sm:px-3 rounded-full font-semibold hover:from-red-600 hover:to-red-700 focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition-all duration-200 transform hover:scale-[1.02] shadow text-xs"
+                  >
+                    S'inscrire
+                  </button>
+                </div>
+                
+                <div className="text-center pt-1">
+                  <p className="text-xs text-gray-500">
+                    Déjà membre ?{' '}
+                    <a href="#" className="font-medium text-red-600 hover:text-red-500">
+                      Se connecter
+                    </a>
+                  </p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Modal de connexion Premium */}
       {isLoginModalOpen && (
