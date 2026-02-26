@@ -42,7 +42,7 @@ const ClimateCourseSection = () => {
         {/* Grille des compétences */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 max-w-5xl mx-auto">
           {/* Carte 1 */}
-          <div className="bg-white rounded-xl p-2 md:p-3 lg:p-4 hover:shadow-md transition-all duration-200">
+          <div className="bg-white rounded-xl p-2 md:p-3 lg:p-4 shadow-sm transition-all duration-200">
             <div>
               <h3 className="font-semibold text-gray-900 mb-0.5 md:mb-1 text-sm md:text-base">Maîtriser les outils essentiels</h3>
               <p className="text-sm text-gray-600 leading-tight md:leading-relaxed">
@@ -52,7 +52,7 @@ const ClimateCourseSection = () => {
           </div>
 
           {/* Carte 2 */}
-          <div className="bg-white rounded-xl p-2 md:p-3 lg:p-4 hover:shadow-md transition-all duration-200">
+          <div className="bg-white rounded-xl p-2 md:p-3 lg:p-4 shadow-sm transition-all duration-200">
             <div>
               <h3 className="font-semibold text-gray-900 mb-0.5 md:mb-1 text-sm md:text-base">Créer des visuels percutants</h3>
               <p className="text-sm text-gray-600 leading-tight md:leading-relaxed">
@@ -62,7 +62,7 @@ const ClimateCourseSection = () => {
           </div>
 
           {/* Carte 3 */}
-          <div className="bg-white rounded-xl p-2 md:p-3 lg:p-4 hover:shadow-md transition-all duration-200">
+          <div className="bg-white rounded-xl p-2 md:p-3 lg:p-4 shadow-sm transition-all duration-200">
             <div>
               <h3 className="font-semibold text-gray-900 mb-0.5 md:mb-1 text-sm md:text-base">Optimiser votre workflow</h3>
               <p className="text-sm text-gray-600 leading-tight md:leading-relaxed">
@@ -72,7 +72,7 @@ const ClimateCourseSection = () => {
           </div>
 
           {/* Carte 4 */}
-          <div className="bg-white rounded-xl p-2 md:p-3 lg:p-4 hover:shadow-md transition-all duration-200">
+          <div className="bg-white rounded-xl p-2 md:p-3 lg:p-4 shadow-sm transition-all duration-200">
             <div>
               <h3 className="font-semibold text-gray-900 mb-0.5 md:mb-1 text-sm md:text-base">Adapter vos créations</h3>
               <p className="text-sm text-gray-600 leading-tight md:leading-relaxed">
@@ -82,7 +82,7 @@ const ClimateCourseSection = () => {
           </div>
 
           {/* Carte 5 */}
-          <div className="bg-white rounded-xl p-2 md:p-3 lg:p-4 hover:shadow-md transition-all duration-200">
+          <div className="bg-white rounded-xl p-2 md:p-3 lg:p-4 shadow-sm transition-all duration-200">
             <div>
               <h3 className="font-semibold text-gray-900 mb-0.5 md:mb-1 text-sm md:text-base">Développer votre identité visuelle</h3>
               <p className="text-sm text-gray-600 leading-tight md:leading-relaxed">
@@ -92,7 +92,7 @@ const ClimateCourseSection = () => {
           </div>
 
           {/* Carte bonus */}
-          <div className="bg-red-50 rounded-xl p-2 md:p-3 lg:p-4 hover:bg-red-100 hover:shadow-md transition-all duration-200">
+          <div className="bg-red-50 rounded-xl p-2 md:p-3 lg:p-4 shadow-sm hover:bg-red-100 transition-all duration-200">
             <div>
               <h3 className="font-semibold text-gray-900 mb-0.5 md:mb-1 text-sm md:text-base">Ressources exclusives</h3>
               <p className="text-sm text-gray-600 leading-tight md:leading-relaxed">

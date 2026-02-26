@@ -2,16 +2,16 @@ import { useState, useEffect } from 'react';
 
 // Composant pour afficher chaque unité de temps
 const TimeUnit = ({ value, label, isLast = false }: { value: string; label: string; isLast?: boolean }) => (
-  <div className="flex flex-col items-center mx-1 group">
+  <div className="flex flex-col items-center mx-0.5 md:mx-1 group">
     <div className="relative">
       <div className="absolute -inset-1 bg-gradient-to-r from-red-500 to-red-600 rounded-lg opacity-0 group-hover:opacity-10 transition-all duration-300 -z-10"></div>
       <div className="p-0.5 md:p-1">
-        <span className="text-xl md:text-2xl font-bold text-red-600">
+        <span className="text-sm md:text-xl font-bold text-red-600">
           {value}
         </span>
       </div>
     </div>
-    <span className="mt-1 text-[10px] font-medium text-gray-500 group-hover:text-red-600 transition-colors">
+    <span className="mt-1 text-[8px] md:text-[10px] font-medium text-gray-500 group-hover:text-red-600 transition-colors">
       {label}
     </span>
   </div>
@@ -19,7 +19,7 @@ const TimeUnit = ({ value, label, isLast = false }: { value: string; label: stri
 
 // Séparateur stylisé
 const Separator = ({ children }: { children: React.ReactNode }) => (
-  <span className="text-xl md:text-2xl font-bold text-red-500/80 mx-0.5 self-center">
+  <span className="text-sm md:text-xl font-bold text-red-500/80 mx-0.5 self-center">
     {children}
   </span>
 );

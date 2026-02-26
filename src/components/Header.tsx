@@ -1,16 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Timer from "@/components/ui/timer-clocking.tsx";
 import { cn } from '@/lib/utils';
-import { Menu, X } from 'lucide-react';
 
 const Header = () => {
   const location = useLocation();
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isInCoursesSection, setIsInCoursesSection] = useState(false);
-  const menuRef = useRef<HTMLDivElement>(null);
   
   // Ne pas afficher le header sur les autres pages que l'accueil
   if (location.pathname !== '/') {
@@ -100,24 +97,13 @@ const Header = () => {
     // Activer le comportement uniquement sur la page d'accueil
     window.addEventListener('scroll', onScroll, { passive: true });
     
-    // Fermer le menu quand on clique à l'extérieur
-    const handleClickOutside = (event: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setIsMenuOpen(false);
-      }
-    };
-    
-    document.addEventListener('mousedown', handleClickOutside);
-    
     return () => {
       window.removeEventListener('scroll', onScroll);
-      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [isInCoursesSection]);
 
   return (
     <header 
-      ref={menuRef}
       className={`fixed top-0 w-full z-50 bg-white/98 backdrop-blur-md border-b border-gray-200/60 shadow-lg py-1 ${
         isVisible 
           ? 'translate-y-0 opacity-100 scale-y-100' 
@@ -145,26 +131,8 @@ const Header = () => {
             </div>
           </div>
 
-          <div className="flex items-center">
-            <button 
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-1 rounded-lg hover:bg-gray-100 transition-colors"
-              aria-label="Menu"
-            >
-              {isMenuOpen ? (
-                <X className="h-6 w-6 text-gray-700" />
-              ) : (
-                <Menu className="h-6 w-6 text-gray-700" />
-              )}
-            </button>
-          </div>
-
-          <nav className={`
-            absolute md:static top-full left-0 w-full md:w-auto bg-white md:bg-transparent 
-            shadow-lg md:shadow-none transition-all duration-300 ease-in-out overflow-hidden
-            ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 md:max-h-full opacity-0 md:opacity-100'}
-          `}>
-            <div className="container mx-auto px-1 py-1 md:py-0 md:px-0 flex flex-col md:flex-row items-center justify-center space-y-1 md:space-y-0 md:space-x-3">
+          <nav className="flex items-center justify-center">
+            <div className="flex flex-row items-center justify-center space-x-1 md:space-x-3">
               <h1 className="text-center md:text-left text-xs md:text-base lg:text-lg font-medium">
                 <span className="text-red-600 font-bold">Offre spéciale</span> se termine :
               </h1>

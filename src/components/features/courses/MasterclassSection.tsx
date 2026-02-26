@@ -142,37 +142,6 @@ const MasterclassSection = () => {
 
     return (
       <div className="space-y-6">
-        {/* Section récapitulative */}
-        <div className="p-2 sm:p-3 mt-6 max-w-md mx-auto lg:max-w-lg relative overflow-hidden">
-          {/* Effet de brillance décoratif */}
-          <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-red-400/5 to-red-500/5 rounded-full filter blur-lg animate-pulse"></div>
-          
-          <div className="relative z-10">
-            <div className="flex flex-nowrap justify-between items-center text-left px-1">
-              <div className="group relative flex items-center space-x-1 hover:bg-gray-50/50 rounded-lg p-1 sm:p-1.5 transition-all duration-300 flex-shrink-0">
-                <BookOpen className="w-3 h-3 sm:w-5 sm:h-5 text-red-500" />
-                <div className="text-xs sm:text-sm font-bold text-gray-900">6 Modules</div>
-              </div>
-
-              <div className="group relative flex items-center space-x-1 hover:bg-gray-50/50 rounded-lg p-1 sm:p-1.5 transition-all duration-300 flex-shrink-0">
-                <Clock className="w-3 h-3 sm:w-5 sm:h-5 text-blue-500" />
-                <div className="text-xs sm:text-sm font-bold text-gray-900">157 min</div>
-              </div>
-
-              <div className="group relative flex items-center space-x-1 hover:bg-gray-50/50 rounded-lg p-1 sm:p-1.5 transition-all duration-300 flex-shrink-0">
-                <Users className="w-3 h-3 sm:w-5 sm:h-5 text-green-500" />
-                <div className="text-xs sm:text-sm font-bold text-gray-900">Illimité Accès</div>
-              </div>
-
-              <div className="group relative flex items-center space-x-1 hover:bg-gray-50/50 rounded-lg p-1 sm:p-1.5 transition-all duration-300 flex-shrink-0">
-                <CheckCircle className="w-3 h-3 sm:w-5 sm:h-5 text-amber-500" />
-                <div className="text-[10px] sm:text-sm font-bold text-gray-900">Certificat Reconnu</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        
         {/* En-tête */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -251,6 +220,41 @@ const MasterclassSection = () => {
                   Présentation
                 </span>
               </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Section récapitulative */}
+        <div className="p-1.5 sm:p-3 mt-6 max-w-md mx-auto lg:max-w-lg relative overflow-hidden">
+          {/* Effet de brillance décoratif */}
+          <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-red-400/5 to-red-500/5 rounded-full filter blur-lg animate-pulse"></div>
+          <div className="absolute bottom-0 left-0 w-20 h-20 bg-gradient-to-tr from-blue-400/5 to-blue-500/5 rounded-full filter blur-lg animate-pulse" style={{animationDelay: '1s'}}></div>
+          
+          <div className="relative z-10 rounded-lg bg-gradient-to-r from-gray-50/80 to-white/80 backdrop-blur-sm border border-gray-100/50 shadow-sm">
+            <div className="flex flex-nowrap justify-between items-center text-left px-0.5">
+              <div className="group relative flex items-center space-x-0.5 bg-gradient-to-br from-white to-gray-50/50 rounded-lg p-1 sm:p-2 transition-all duration-300 flex-shrink-0 border border-gray-100/30 shadow-sm">
+                <div className="absolute inset-0 bg-gradient-to-r from-red-500/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <BookOpen className="w-2.5 h-2.5 sm:w-5 sm:h-5 text-red-500 relative z-10" />
+                <div className="text-[10px] sm:text-sm font-bold text-gray-900 leading-tight relative z-10">6 Modules</div>
+              </div>
+
+              <div className="group relative flex items-center space-x-0.5 bg-gradient-to-br from-white to-gray-50/50 rounded-lg p-1 sm:p-2 transition-all duration-300 flex-shrink-0 border border-gray-100/30 shadow-sm">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <Clock className="w-2.5 h-2.5 sm:w-5 sm:h-5 text-blue-500 relative z-10" />
+                <div className="text-[10px] sm:text-sm font-bold text-gray-900 leading-tight relative z-10">157 min</div>
+              </div>
+
+              <div className="group relative flex items-center space-x-0.5 bg-gradient-to-br from-white to-gray-50/50 rounded-lg p-1 sm:p-2 transition-all duration-300 flex-shrink-0 border border-gray-100/30 shadow-sm">
+                <div className="absolute inset-0 bg-gradient-to-r from-green-500/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <Users className="w-2.5 h-2.5 sm:w-5 sm:h-5 text-green-500 relative z-10" />
+                <div className="text-[9px] sm:text-sm font-bold text-gray-900 leading-tight relative z-10">Illimité Accès</div>
+              </div>
+
+              <div className="group relative flex items-center space-x-0.5 bg-gradient-to-br from-white to-gray-50/50 rounded-lg p-1 sm:p-2 transition-all duration-300 flex-shrink-0 border border-gray-100/30 shadow-sm">
+                <div className="absolute inset-0 bg-gradient-to-r from-amber-500/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <CheckCircle className="w-2.5 h-2.5 sm:w-5 sm:h-5 text-amber-500 relative z-10" />
+                <div className="text-[9px] sm:text-sm font-bold text-gray-900 leading-tight relative z-10">Certificat Reconnu</div>
+              </div>
             </div>
           </div>
         </div>
@@ -365,20 +369,20 @@ const MasterclassSection = () => {
                   </p>
                   <ul className="space-y-1.5 md:space-y-2 mb-3 md:mb-5">
                     <li className="flex items-center bg-gray-50 rounded-lg p-1.5 md:p-2 transition-all duration-300 hover:bg-red-50">
-                      <div className="w-4 h-4 md:w-5 md:h-5 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center mr-1.5 md:mr-2">
-                        <X className="w-2 h-2 md:w-2.5 md:h-2.5 text-white" />
+                      <div className="w-4 h-4 md:w-5 md:h-5 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mr-1.5 md:mr-2">
+                        <CheckCircle className="w-2 h-2 md:w-2.5 md:h-2.5 text-white" />
                       </div>
                       <span className="text-xs font-medium text-gray-700">Accès illimité aux cours</span>
                     </li>
                     <li className="flex items-center bg-gray-50 rounded-lg p-1.5 md:p-2 transition-all duration-300 hover:bg-red-50">
-                      <div className="w-4 h-4 md:w-5 md:h-5 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center mr-1.5 md:mr-2">
-                        <X className="w-2 h-2 md:w-2.5 md:h-2.5 text-white" />
+                      <div className="w-4 h-4 md:w-5 md:h-5 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mr-1.5 md:mr-2">
+                        <CheckCircle className="w-2 h-2 md:w-2.5 md:h-2.5 text-white" />
                       </div>
                       <span className="text-xs font-medium text-gray-700">Ressources téléchargeables</span>
                     </li>
                     <li className="flex items-center bg-gray-50 rounded-lg p-1.5 md:p-2 transition-all duration-300 hover:bg-red-50">
-                      <div className="w-4 h-4 md:w-5 md:h-5 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center mr-1.5 md:mr-2">
-                        <X className="w-2 h-2 md:w-2.5 md:h-2.5 text-white" />
+                      <div className="w-4 h-4 md:w-5 md:h-5 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mr-1.5 md:mr-2">
+                        <CheckCircle className="w-2 h-2 md:w-2.5 md:h-2.5 text-white" />
                       </div>
                       <span className="text-xs font-medium text-gray-700">Communauté active</span>
                     </li>
