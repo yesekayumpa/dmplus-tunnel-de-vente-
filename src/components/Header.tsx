@@ -134,7 +134,7 @@ const Header = () => {
           <nav className="flex items-center justify-center">
             <div className="flex flex-row items-center justify-center space-x-1 md:space-x-3">
               <h1 className="text-center md:text-left text-sm md:text-base lg:text-xl font-medium">
-                <span className="text-red-600 font-bold">Offre spéciale</span> se termine :
+                <span className="text-red-600 font-bold">Offre spéciale</span> se termine
               </h1>
               <div className="w-full md:w-auto text-center">
                 <Timer endTime={new Date(Date.now() + 48 * 60 * 60 * 1000).toISOString()} className="text-gray-900 text-sm" />
