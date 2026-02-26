@@ -143,23 +143,31 @@ const MasterclassSection = () => {
     return (
       <div className="space-y-6">
         {/* Section récapitulative */}
-        <div className="bg-white rounded-xl p-4 mt-6 max-w-md mx-auto lg:max-w-lg">
-          <div className="flex flex-nowrap justify-center gap-x-6 text-left">
-            <div className="flex items-center space-x-2">
-              <BookOpen className="w-4 h-4 text-gray-600 flex-shrink-0" />
-              <span className="text-gray-900 text-sm">6 Modules</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Clock className="w-4 h-4 text-gray-600 flex-shrink-0" />
-              <span className="text-gray-900 text-sm">157 min</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Users className="w-4 h-4 text-gray-600 flex-shrink-0" />
-              <span className="text-gray-900 text-sm">Accès illimité</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <CheckCircle className="w-4 h-4 text-gray-600 flex-shrink-0" />
-              <span className="text-gray-900 text-sm">Certificat</span>
+        <div className="p-2 sm:p-3 mt-6 max-w-md mx-auto lg:max-w-lg relative overflow-hidden">
+          {/* Effet de brillance décoratif */}
+          <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-red-400/5 to-red-500/5 rounded-full filter blur-lg animate-pulse"></div>
+          
+          <div className="relative z-10">
+            <div className="flex flex-nowrap justify-between items-center text-left px-1">
+              <div className="group relative flex items-center space-x-1 hover:bg-gray-50/50 rounded-lg p-1 sm:p-1.5 transition-all duration-300 flex-shrink-0">
+                <BookOpen className="w-3 h-3 sm:w-5 sm:h-5 text-red-500" />
+                <div className="text-xs sm:text-sm font-bold text-gray-900">6 Modules</div>
+              </div>
+
+              <div className="group relative flex items-center space-x-1 hover:bg-gray-50/50 rounded-lg p-1 sm:p-1.5 transition-all duration-300 flex-shrink-0">
+                <Clock className="w-3 h-3 sm:w-5 sm:h-5 text-blue-500" />
+                <div className="text-xs sm:text-sm font-bold text-gray-900">157 min</div>
+              </div>
+
+              <div className="group relative flex items-center space-x-1 hover:bg-gray-50/50 rounded-lg p-1 sm:p-1.5 transition-all duration-300 flex-shrink-0">
+                <Users className="w-3 h-3 sm:w-5 sm:h-5 text-green-500" />
+                <div className="text-xs sm:text-sm font-bold text-gray-900">Illimité Accès</div>
+              </div>
+
+              <div className="group relative flex items-center space-x-1 hover:bg-gray-50/50 rounded-lg p-1 sm:p-1.5 transition-all duration-300 flex-shrink-0">
+                <CheckCircle className="w-3 h-3 sm:w-5 sm:h-5 text-amber-500" />
+                <div className="text-[10px] sm:text-sm font-bold text-gray-900">Certificat Reconnu</div>
+              </div>
             </div>
           </div>
         </div>
