@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Play, X, Clock, User, Star, ArrowRight, PlayCircle, ChevronDown, Lock, Mail, Eye, EyeOff, Sparkles, MessageCircle, Lightbulb, Users, BookOpen, CheckCircle } from 'lucide-react';
+import { Play, X, Clock, User, Star, ArrowRight, PlayCircle, ChevronDown, Lock, Mail, Eye, EyeOff, Sparkles, MessageCircle, Lightbulb, Users, BookOpen, CheckCircle, Globe } from 'lucide-react';
 
 const MasterclassSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -142,6 +142,29 @@ const MasterclassSection = () => {
 
     return (
       <div className="space-y-6">
+        {/* Section récapitulative */}
+        <div className="bg-white rounded-xl p-4 mt-6 max-w-md mx-auto lg:max-w-lg">
+          <div className="flex flex-nowrap justify-center gap-x-6 text-left">
+            <div className="flex items-center space-x-2">
+              <BookOpen className="w-4 h-4 text-gray-600 flex-shrink-0" />
+              <span className="text-gray-900 text-sm">6 Modules</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Clock className="w-4 h-4 text-gray-600 flex-shrink-0" />
+              <span className="text-gray-900 text-sm">157 min</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Users className="w-4 h-4 text-gray-600 flex-shrink-0" />
+              <span className="text-gray-900 text-sm">Accès illimité</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <CheckCircle className="w-4 h-4 text-gray-600 flex-shrink-0" />
+              <span className="text-gray-900 text-sm">Certificat</span>
+            </div>
+          </div>
+        </div>
+
+        
         {/* En-tête */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -151,6 +174,77 @@ const MasterclassSection = () => {
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             6 modules complets pour devenir un designer graphique professionnel
           </p>
+        </div>
+
+        {/* Section Vidéo explicative */}
+        <div className="mt-12 sm:mt-16 animate-fade-in-up" style={{ animationDelay: '1400ms' }}>
+          <div className="text-center mb-6 sm:mb-8">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2 sm:mb-3">
+              <span className="bg-gradient-to-r from-red-600 via-red-700 to-red-800 bg-clip-text text-transparent">
+                Découvrir la formation
+              </span>
+            </h2>
+            <p className="text-gray-600 text-sm sm:text-base max-w-xl mx-auto">
+              Une présentation immersive de mes créations
+            </p>
+          </div>
+          
+          <div className="relative max-w-3xl mx-auto">
+            {/* Conteneur vidéo avec design exceptionnel */}
+            <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl sm:rounded-2xl p-1 shadow-xl group">
+              {/* Effets de brillance */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-red-500/20 via-transparent to-red-500/20 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-white/10 to-transparent rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
+              
+              {/* Conteneur vidéo */}
+              <div className="relative bg-black rounded-lg sm:rounded-xl overflow-hidden aspect-video">
+                {/* Icône de lecture centrée */}
+                <div className="absolute inset-0 flex items-center justify-center z-20">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-red-600/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-xl hover:scale-110 hover:bg-red-500 transition-all duration-500 cursor-pointer group">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                    {/* Effet de pulsation */}
+                    <div className="absolute inset-0 bg-red-600/30 rounded-full animate-ping"></div>
+                  </div>
+                </div>
+                
+                {/* Image placeholder ou vidéo */}
+                <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 bg-red-600/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <svg className="w-8 h-8 sm:w-10 sm:h-10 text-red-500" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z"/>
+                      </svg>
+                    </div>
+                    <p className="text-gray-400 text-sm">Cliquez pour lire la vidéo</p>
+                  </div>
+                </div>
+                
+                {/* Overlay sombre au survol */}
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+            </div>
+            
+            {/* Informations sur la vidéo */}
+            <div className="mt-4 sm:mt-6 text-center">
+              <p className="text-gray-500 text-xs">
+                <span className="inline-flex items-center gap-1">
+                  <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
+                  </svg>
+                  3 minutes
+                </span>
+                <span className="mx-1">•</span>
+                <span className="inline-flex items-center gap-1">
+                  <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                  Présentation
+                </span>
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Modules accordéon */}
@@ -209,33 +303,6 @@ const MasterclassSection = () => {
             </div>
           ))}
         </div>
-
-        {/* Section récapitulative */}
-        <div className="bg-gray-50 border border-gray-200 rounded-xl p-8 mt-12 max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="w-16 h-16 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                <BookOpen className="w-8 h-8 text-red-600" />
-              </div>
-              <h4 className="font-semibold text-gray-900 text-lg mb-2">6 Modules</h4>
-              <p className="text-gray-600 text-sm">Formation complète et structurée</p>
-            </div>
-            <div>
-              <div className="w-16 h-16 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock className="w-8 h-8 text-red-600" />
-              </div>
-              <h4 className="font-semibold text-gray-900 text-lg mb-2">157 minutes</h4>
-              <p className="text-gray-600 text-sm">Contenu vidéo de qualité</p>
-            </div>
-            <div>
-              <div className="w-16 h-16 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="w-8 h-8 text-red-600" />
-              </div>
-              <h4 className="font-semibold text-gray-900 text-lg mb-2">Accès illimité</h4>
-              <p className="text-gray-600 text-sm">Formation à vie et mises à jour</p>
-            </div>
-          </div>
-        </div>
       </div>
     );
   };
@@ -254,12 +321,12 @@ const MasterclassSection = () => {
 
         {/* Section Premium et Standard - ajoutée avant Comment acheter un bien */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 mb-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-4 sm:mb-6 md:mb-8">
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 mb-2 md:mb-3">
               Choisissez Votre Parcours
             </h2>
-            <div className="w-20 h-1 bg-red-600 mx-auto mt-3"></div>
-            <p className="text-style-header text-gray-700 max-w-3xl mx-auto mt-6">
+            <div className="w-16 h-0.5 bg-red-600 mx-auto rounded-full mb-2 md:mb-4"></div>
+            <p className="text-sm md:text-base text-gray-600 max-w-2xl mx-auto">
               Des formations adaptées à tous les niveaux, conçues par des experts pour vous aider à maîtriser la finance personnelle et l'investissement.
             </p>
           </div>
@@ -274,38 +341,44 @@ const MasterclassSection = () => {
                       <BookOpen className="w-4 h-4 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-gray-900">Standard</h3>
+                      <h3 className="font-semibold text-gray-900 text-xs md:text-sm">Standard</h3>
                       <p className="text-xs text-gray-600 font-medium">Formation complète</p>
                     </div>
                   </div>
                   <div className="mb-5">
                     <div className="flex items-baseline justify-center bg-gradient-to-r from-red-50 to-red-50 rounded-xl py-2 px-3 border border-red-100">
-                      <span className="text-2xl font-bold bg-gradient-to-r from-red-600 to-red-700 bg-clip-text text-transparent">297</span>
-                      <span className="text-base font-semibold text-red-600 ml-1">FCFA</span>
+                      <span className="text-lg md:text-xl font-bold bg-gradient-to-r from-red-600 to-red-700 bg-clip-text text-transparent">297</span>
+                      <span className="text-sm font-semibold text-red-600 ml-1">FCFA</span>
                     </div>
-                    <p className="text-center text-xs text-gray-500 mt-2 font-medium">Prix unique • Accès immédiat</p>
+                    <p className="text-center text-xs text-gray-500 mt-1 md:mt-2 font-medium">Prix unique • Accès immédiat</p>
                   </div>
-                  <p className="text-gray-600 mb-4 text-xs md:text-sm leading-relaxed">
+                  <p className="text-gray-600 mb-3 md:mb-4 text-xs leading-tight md:leading-relaxed">
                     Formations complètes pour apprendre à votre rythme avec nos ressources en ligne.
                   </p>
-                  <ul className="space-y-2 mb-5">
-                    <li className="flex items-center bg-gray-50 rounded-lg p-2 transition-all duration-300 hover:bg-red-50">
-                      <div className="w-5 h-5 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mr-2">
-                        <CheckCircle className="w-2.5 h-2.5 text-white" />
+                  <ul className="space-y-1.5 md:space-y-2 mb-3 md:mb-5">
+                    <li className="flex items-center bg-gray-50 rounded-lg p-1.5 md:p-2 transition-all duration-300 hover:bg-red-50">
+                      <div className="w-4 h-4 md:w-5 md:h-5 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center mr-1.5 md:mr-2">
+                        <X className="w-2 h-2 md:w-2.5 md:h-2.5 text-white" />
                       </div>
                       <span className="text-xs font-medium text-gray-700">Accès illimité aux cours</span>
                     </li>
-                    <li className="flex items-center bg-gray-50 rounded-lg p-2 transition-all duration-300 hover:bg-red-50">
-                      <div className="w-5 h-5 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mr-2">
-                        <CheckCircle className="w-2.5 h-2.5 text-white" />
+                    <li className="flex items-center bg-gray-50 rounded-lg p-1.5 md:p-2 transition-all duration-300 hover:bg-red-50">
+                      <div className="w-4 h-4 md:w-5 md:h-5 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center mr-1.5 md:mr-2">
+                        <X className="w-2 h-2 md:w-2.5 md:h-2.5 text-white" />
                       </div>
                       <span className="text-xs font-medium text-gray-700">Ressources téléchargeables</span>
                     </li>
-                    <li className="flex items-center bg-gray-50 rounded-lg p-2 transition-all duration-300 hover:bg-red-50">
-                      <div className="w-5 h-5 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mr-2">
-                        <CheckCircle className="w-2.5 h-2.5 text-white" />
+                    <li className="flex items-center bg-gray-50 rounded-lg p-1.5 md:p-2 transition-all duration-300 hover:bg-red-50">
+                      <div className="w-4 h-4 md:w-5 md:h-5 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center mr-1.5 md:mr-2">
+                        <X className="w-2 h-2 md:w-2.5 md:h-2.5 text-white" />
                       </div>
                       <span className="text-xs font-medium text-gray-700">Communauté active</span>
+                    </li>
+                    <li className="flex items-center bg-gray-50 rounded-lg p-1.5 md:p-2 transition-all duration-300 hover:bg-red-50">
+                      <div className="w-4 h-4 md:w-5 md:h-5 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center mr-1.5 md:mr-2">
+                        <X className="w-2 h-2 md:w-2.5 md:h-2.5 text-white" />
+                      </div>
+                      <span className="text-xs font-medium text-gray-700">Suivi régulier du formateur</span>
                     </li>
                   </ul>
                   <button className="w-full py-2.5 px-3 bg-gradient-to-r from-black to-gray-800 text-white font-semibold rounded-full transition-all duration-500 text-xs hover:from-gray-800 hover:to-black transform hover:scale-[1.02] border border-gray-200">
@@ -322,38 +395,44 @@ const MasterclassSection = () => {
                       <Users className="w-4 h-4 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-gray-900">Premium</h3>
+                      <h3 className="font-semibold text-gray-900 text-xs md:text-sm">Premium</h3>
                       <p className="text-xs text-red-600 font-medium">Accompagnement personnalisé</p>
                     </div>
                   </div>
                   <div className="mb-5">
                     <div className="flex items-baseline justify-center bg-gradient-to-r from-red-50 to-red-50 rounded-xl py-2 px-3 border border-red-100">
-                      <span className="text-2xl font-bold bg-gradient-to-r from-red-600 to-red-700 bg-clip-text text-transparent">597</span>
-                      <span className="text-base font-semibold text-red-600 ml-1">FCFA</span>
+                      <span className="text-lg md:text-xl font-bold bg-gradient-to-r from-red-600 to-red-700 bg-clip-text text-transparent">597</span>
+                      <span className="text-sm font-semibold text-red-600 ml-1">FCFA</span>
                     </div>
-                    <p className="text-center text-xs text-gray-500 mt-2 font-medium">Prix unique • Accès immédiat</p>
+                    <p className="text-center text-xs text-gray-500 mt-1 md:mt-2 font-medium">Prix unique • Accès immédiat</p>
                   </div>
-                  <p className="text-gray-600 mb-4 text-xs md:text-sm leading-relaxed">
+                  <p className="text-gray-600 mb-3 md:mb-4 text-xs leading-tight md:leading-relaxed">
                     Coaching individuel avec suivi personnalisé pour atteindre vos objectifs rapidement.
                   </p>
-                  <ul className="space-y-2 mb-5">
-                    <li className="flex items-center bg-gray-50 rounded-lg p-2 transition-all duration-300 hover:bg-red-50">
-                      <div className="w-5 h-5 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mr-2">
-                        <CheckCircle className="w-2.5 h-2.5 text-white" />
+                  <ul className="space-y-1.5 md:space-y-2 mb-3 md:mb-5">
+                    <li className="flex items-center bg-gray-50 rounded-lg p-1.5 md:p-2 transition-all duration-300 hover:bg-red-50">
+                      <div className="w-4 h-4 md:w-5 md:h-5 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mr-1.5 md:mr-2">
+                        <CheckCircle className="w-2 h-2 md:w-2.5 md:h-2.5 text-white" />
                       </div>
-                      <span className="text-xs font-medium text-gray-700">Sessions individuelles</span>
+                      <span className="text-xs font-medium text-gray-700">Accès illimité aux cours</span>
                     </li>
-                    <li className="flex items-center bg-gray-50 rounded-lg p-2 transition-all duration-300 hover:bg-red-50">
-                      <div className="w-5 h-5 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mr-2">
-                        <CheckCircle className="w-2.5 h-2.5 text-white" />
+                    <li className="flex items-center bg-gray-50 rounded-lg p-1.5 md:p-2 transition-all duration-300 hover:bg-red-50">
+                      <div className="w-4 h-4 md:w-5 md:h-5 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mr-1.5 md:mr-2">
+                        <CheckCircle className="w-2 h-2 md:w-2.5 md:h-2.5 text-white" />
                       </div>
-                      <span className="text-xs font-medium text-gray-700">Plan d'action sur mesure</span>
+                      <span className="text-xs font-medium text-gray-700">Ressources téléchargeables</span>
                     </li>
-                    <li className="flex items-center bg-gray-50 rounded-lg p-2 transition-all duration-300 hover:bg-red-50">
-                      <div className="w-5 h-5 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mr-2">
-                        <CheckCircle className="w-2.5 h-2.5 text-white" />
+                    <li className="flex items-center bg-gray-50 rounded-lg p-1.5 md:p-2 transition-all duration-300 hover:bg-red-50">
+                      <div className="w-4 h-4 md:w-5 md:h-5 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mr-1.5 md:mr-2">
+                        <CheckCircle className="w-2 h-2 md:w-2.5 md:h-2.5 text-white" />
                       </div>
-                      <span className="text-xs font-medium text-gray-700">Suivi régulier</span>
+                      <span className="text-xs font-medium text-gray-700">Communauté active</span>
+                    </li>
+                    <li className="flex items-center bg-gray-50 rounded-lg p-1.5 md:p-2 transition-all duration-300 hover:bg-red-50">
+                      <div className="w-4 h-4 md:w-5 md:h-5 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mr-1.5 md:mr-2">
+                        <CheckCircle className="w-2 h-2 md:w-2.5 md:h-2.5 text-white" />
+                      </div>
+                      <span className="text-xs font-medium text-gray-700">Suivi régulier du formateur</span>
                     </li>
                   </ul>
                   <button className="w-full py-2.5 px-3 bg-gradient-to-r from-black to-gray-800 text-white font-semibold rounded-full transition-all duration-500 text-xs hover:from-gray-800 hover:to-black transform hover:scale-[1.02] border border-gray-200">
