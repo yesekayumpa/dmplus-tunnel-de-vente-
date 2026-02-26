@@ -253,7 +253,7 @@ const MasterclassSection = () => {
               <div className="group relative flex items-center space-x-0.5 bg-gradient-to-br from-white to-gray-50/50 rounded-lg p-1 sm:p-2 transition-all duration-300 flex-shrink-0 border border-gray-100/30 shadow-sm">
                 <div className="absolute inset-0 bg-gradient-to-r from-amber-500/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <CheckCircle className="w-2.5 h-2.5 sm:w-5 sm:h-5 text-amber-500 relative z-10" />
-                <div className="text-[9px] sm:text-sm font-bold text-gray-900 leading-tight relative z-10">Certificat Reconnu</div>
+                <div className="text-xs sm:text-base font-bold text-gray-900 leading-tight relative z-10">Certificat</div>
               </div>
             </div>
           </div>
